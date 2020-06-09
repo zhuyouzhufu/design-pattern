@@ -1,4 +1,4 @@
-package com.itfanx.creation.type.easy.factory;
+package com.itfanx.creation.type.easyFactory;
 
 /**
  * Java视频类

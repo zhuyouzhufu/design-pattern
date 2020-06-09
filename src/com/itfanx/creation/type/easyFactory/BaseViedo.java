@@ -1,4 +1,4 @@
-package com.itfanx.creation.type.easy.factory;
+package com.itfanx.creation.type.easyFactory;
 
 /**
  * 抽象录像类
