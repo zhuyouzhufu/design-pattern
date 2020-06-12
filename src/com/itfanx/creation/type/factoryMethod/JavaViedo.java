@@ -5,7 +5,7 @@ package com.itfanx.creation.type.factoryMethod;
  * @author itfanx
  * @email itfanx@126.com
  * @date 2020-06-09 23:44
- * 备注：简单工厂(不属于23种GOF设计模式)
+ * 备注：工厂方法
  */
 public class JavaViedo extends BaseViedo {
     @Override
