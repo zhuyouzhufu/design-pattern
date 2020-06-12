@@ -8,9 +8,9 @@ package com.itfanx.creation.type.easyFactory;
  */
 public class Test {
     public static void main(String[] args) {
-        BaseViedo baseViedo = ViedoFactory.getViedo(JavaViedo.class);
+        BaseVideo baseViedo = VideoFactory.getViedo(JavaVideo.class);
         baseViedo.produce();
-        baseViedo = ViedoFactory.getViedo(GoViedo.class);
+        baseViedo = VideoFactory.getViedo(GoVideo.class);
         baseViedo.produce();
     }
 }

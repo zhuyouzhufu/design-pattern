@@ -8,9 +8,9 @@ package com.itfanx.creation.type.factoryMethod;
  */
 public class Test {
     public static void main(String[] args) {
-        ViedoFactory javaViedoFactory =  new JavaViedoFactory();
-        ViedoFactory goViedoFactory =  new GoViedoFactory();
-        ViedoFactory feViedoFactory =  new FEViedoFactory();
+        VideoFactory javaViedoFactory =  new JavaVideoFactory();
+        VideoFactory goViedoFactory =  new GoVideoFactory();
+        VideoFactory feViedoFactory =  new FEVideoFactory();
         javaViedoFactory.getViedo().produce();
         goViedoFactory.getViedo().produce();
         feViedoFactory.getViedo().produce();

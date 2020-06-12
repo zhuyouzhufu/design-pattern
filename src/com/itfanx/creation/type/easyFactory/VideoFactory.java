@@ -1,7 +1,5 @@
 package com.itfanx.creation.type.easyFactory;
 
-import javax.swing.text.View;
-
 /**
  * 录像工厂类
  * @author itfanx
@@ -9,15 +7,15 @@ import javax.swing.text.View;
  * @date 2020-06-09 23:44
  * 备注：简单工厂(不属于23种GOF设计模式)
  */
-public class ViedoFactory {
+public class VideoFactory {
 
     /**
      * 获得视频对象
      * @return  BaseViedo
      */
-    public static BaseViedo getViedo(Class clz){
+    public static BaseVideo getViedo(Class clz){
         try {
-            BaseViedo viedo = (BaseViedo) clz.newInstance();
+            BaseVideo viedo = (BaseVideo) clz.newInstance();
             return viedo;
         } catch (Exception e) {
             throw new RuntimeException("传入的参数类不是BaseViedo的子类");
