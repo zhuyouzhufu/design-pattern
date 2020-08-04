@@ -9,14 +9,30 @@ package com.itfanx.creation.type.singleton;
  * 单例模式
  */
 public class LazySingleton {
-    public static LazySingleton lazySingleton;
+    public static LazySingleton SINGLETON;
 
-    private LazySingleton(){}
-
-    public static synchronized LazySingleton getInstance(){
-        if(lazySingleton == null){
-            lazySingleton = new LazySingleton();
+    private LazySingleton(){
+        if(SINGLETON != null){
+            throw new RuntimeException("禁止使用构造器反射构造单例对象");
         }
-        return lazySingleton;
+    }
+
+    /**
+     * 防止序列化反序列化破坏单例模式
+     * @return  Object
+     */
+    public Object readResolve(){
+        return SINGLETON;
+    }
+
+    public static LazySingleton getInstance(){
+        if(SINGLETON == null){
+            synchronized (LazySingleton.class){
+                if(SINGLETON == null){
+                    SINGLETON = new LazySingleton();
+                }
+            }
+        }
+        return SINGLETON;
     }
 }

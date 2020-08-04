@@ -11,10 +11,24 @@ package com.itfanx.creation.type.singleton;
 public class HungrySingleton {
     private static final HungrySingleton SINGLETON = new HungrySingleton();
 
-    private HungrySingleton(){}
+    private HungrySingleton(){
+        if(SINGLETON != null){
+            throw new RuntimeException("禁止使用构造器反射构造单例对象");
+        }
+    }
+
+    /**
+     * 防止序列化反序列化破坏单例模式
+     * @return  Object
+     */
+    public Object readResolve(){
+        return SINGLETON;
+    }
 
     /**
      * 获得单例对象
+     * 备注：饿汉式不需要使用双重校验锁获取单例对象，
+     * 因为该对象在类加载时只有一个线程能够初始化单例对象，因为有类锁的缘故，所以是线程安全的
      * @return  HungrySingleton
      */
     public static HungrySingleton getInstance(){
